@@ -1,0 +1,254 @@
+@font-face {
+	font-family: 'Fino';
+	src: url('fontes/Montserrat-Thin.ttf');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('fontes/Montserrat-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'Grossoi';
+	src: url('fontes/Montserrat-BoldItalic.ttf');
+}
+
+@font-face {
+	font-family: 'Normal';
+	src: url('fontes/Montserrat-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'italic';
+	src: url('fontes/Montserrat-Italic.ttf');
+}
+
+body {
+	/* display:flex; */
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 255, 255, .322);
+	overflow: hidden;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -21px;
+	margin-left: -24px;
+}
+
+.row {
+	display: flex;
+	justify-content: row;
+}
+
+.between {
+	display: flex;
+	justify-content: space-between;
+	font-size: 24px;
+}
+
+#container {
+	height: 67.5rem;
+	width: 120rem;
+	background-color: rgba(0, 0, 0, .582);
+	/* border-radius:.2rem; */
+	margin-left: -8px;
+	margin-top: -8px;
+	overflow: hidden;
+	background: url(https://media.discordapp.net/attachments/934272608621445202/1043411045840072724/back.png);
+}
+
+::-webkit-scrollbar {
+	width: 4px
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(0 0 0 / 6%);
+	margin-top: 0;
+	border-radius: 20px
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #f443360f;
+	border-radius: 20px
+}
+
+#navbar {
+	height: 6%;
+	width: 50%;
+	/* background-color:rgba(0,0,0,.322); */
+	/* border-radius:.2rem .2rem 0 0; */
+	display: flex;
+	align-items: center
+}
+
+#mainNavbar {
+	margin-left: 5%;
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center
+}
+
+.titleNavbar {
+	font-size: 2rem;
+	font-family: Poppins;
+	color: #fff
+}
+
+.mainCategory {
+	display: flex;
+	justify-content: row;
+	font-size: 1rem;
+	font-family: Poppins;
+	color: #fff
+}
+
+.category {
+	margin-left: 1rem
+}
+
+@media only screen and (max-width:1366px) {
+	body {
+		zoom: .7
+	}
+}
+
+@media only screen and (max-width:1290px) {
+	body {
+		zoom: .6
+	}
+}
+
+@media only screen and (max-width:1024px) {
+	body {
+		zoom: .4
+	}
+}
+
+@media only screen and (max-width:1630px) {
+	body {
+		zoom: .8
+	}
+}
+
+@media only screen and (max-width:1350px) {
+	body {
+		zoom: .7
+	}
+}
+
+#listaVeiculos {
+	height: 59.1rem;
+	width: 22rem;
+	overflow: auto
+}
+
+.veiculo {
+	margin-bottom: -1.3rem;
+	height: 10rem;
+	width: 80%;
+	background-color: rgba(0, 0, 0, .322);
+	border-left: 47px solid #fff0;
+	background: url(https://cdn.discordapp.com/attachments/934272608621445202/1048445197496897596/dds.png);
+	background-repeat: no-repeat;
+}
+
+.nameCar {
+	font-size: 1.3rem;
+	font-family: Poppins;
+	margin-left: 1rem;
+	margin-top: 1rem;
+	padding-top: 0.4rem;
+	color: #fff;
+}
+
+#fotoCarro {
+	margin-top: 9%;
+	margin-left: -13%;
+	max-height: 7rem;
+	width: 67%;
+}
+
+.vehicle.active {
+	/* background:#fff!important; */
+	transition: .5s;
+	background: url(https://cdn.discordapp.com/attachments/934272608621445202/1048442650119917638/carros.png);
+	background-repeat: no-repeat;
+}
+
+.ativadaTxt {
+	color: #000 !important;
+	transition: .5s
+}
+
+#nomeCarro {
+	font-size: 6.5rem;
+	font-family: Poppins;
+	margin-left: 58rem;
+	padding-top: -0.6rem;
+	color: #fff
+}
+
+#fotoCarro2 {
+	height: 325px;
+	max-width: 800px;
+	transition: .5s
+}
+
+#painel {
+	margin-top: -17.5rem;
+	margin-left: -1rem;
+	margin-right: 8rem;
+	height: 9rem;
+	width: 16rem;
+	/* background-color:rgba(0,0,0,.322); */
+	border-radius: .2rem
+}
+
+.txtAbout {
+	font-family: Poppins;
+	margin-left: 3rem;
+	padding-top: 0.6rem;
+	color: #fff
+}
+
+.price {
+	margin-right: -6rem;
+	font-family: Poppins;
+	padding-top: .6rem;
+	color: #fff
+}
+
+.button {
+	margin-top: -3.2rem;
+	margin-left: -1rem;
+	height: 3.25rem;
+	width: 13rem;
+	background-color: #111111;
+	border-radius: .2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 500;
+	font-size: 1.6rem;
+	font-family: Poppins;
+	color: #fff;
+	transition: .5s
+}
+
+.button:hover {
+	background-color: #fff;
+	transition: .5s;
+	color: #000
+}
+
+#showRoom{
+	margin-left: 8px; background: url(https://cdn.discordapp.com/attachments/934272608621445202/1048449181678850129/carroscima.png); width: 81.2%; height: 615px; margin-top: 120px;
+}
+.mainButtons{
+	margin-top: 6.8rem;
+}

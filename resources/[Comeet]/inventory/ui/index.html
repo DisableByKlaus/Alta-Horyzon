@@ -1,0 +1,132 @@
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="inventory">
+        <div class="bg"></div>
+        <!--<div class="inventory-head">
+            <div class="inventory-weight-head"><span style="opacity: 0.5;">80.0</span> / 120.0</div>
+			<div class="inventory-weight-head-other"><span style="opacity: 0.5;">80.0</span> / 120.0</div>
+        </div>-->
+        <div data-inventory="player" class="player-quick">
+            <div class="player-quick-head">HOTBAR</div>
+            <div class="player-quick-items"></div>
+			<div class="player-quick-head-indicator" style="top: 11%;" id="hotbar1">1</div>
+			<div class="player-quick-head-indicator" style="top: 31%;" id="hotbar2">2</div>
+			<div class="player-quick-head-indicator" style="top: 51%;" id="hotbar3">3</div>
+			<div class="player-quick-head-indicator" style="top: 71%;" id="hotbar4">4</div>
+			<div class="player-quick-head-indicator" style="top: 91%;" id="hotbar5">5</div>
+			
+        </div>
+        <div data-inventory="player" class="player-pocket">
+            <div class="player-pocket-head"><img src="https://cdn.discordapp.com/attachments/1022977507487645790/1047952022525186158/unknown.png" style="margin-left: -0.9vw;"/></div>
+			<div class="player-pocket-head-icon"></div>
+            <div class="player-pocket-items"></div>
+        </div>
+        
+        
+        <input id="amount" min="0" max="10000" type="number" oninput="validity.valid||(value='');" placeholder="QUANTIDADE">
+        
+        <div class="drop-item">
+            <img src="https://cdn.discordapp.com/attachments/1023065020499755010/1049421787399733318/btn-dropar.png" style="width: 14%;">
+        </div>
+
+		
+        <div class="crafting-toggle">
+            <span>
+                <img src="https://cdn.discordapp.com/attachments/1023065020499755010/1049421573532168252/btn-craft-hover.png" style="margin-left: 0vw;width: 73%;">            
+            </span>
+        </div>
+
+        <div class="clothe-toggle">
+            <span>
+                <img src="https://cdn.discordapp.com/attachments/1023065020499755010/1049421599088062515/btn-roupas-hover.png" style="margin-left: 0vw;width: 73%;">  
+            </span>
+        </div>
+		
+        <div data-inventory="player" class="player-inventory">
+            <div style="position: fixed;top:33vh;" class="player-inventory-head">
+                <img src="https://cdn.discordapp.com/attachments/1022977507487645790/1047952022525186158/unknown.png" ></div>
+			<div class="player-inventory-head-icon"></div>
+            <div class="player-items"></div>
+        </div>
+
+        <div class="backpack">
+            <div class="imagem">
+                <img src="https://cdn.discordapp.com/attachments/1023003064828964864/1047976070562971738/mochila_bloqueada.png" style="margin-top: 2.9%;margin-left: 31.9vw;">        </div>
+        <div data-inventory="other" class="other-inventory">
+            <div style="position: fixed;top:33vh;" class="other-inventory-head">OUTROS</div>
+			<div class="player-others-head-icon"><i class="fad fa-backpack"></i></div>
+            <div class="other-items"></div>
+        </div>
+        <div class="crafting-inventory">
+            <div style="position: fixed;top:20vh;" class="other-inventory-head">PRODUÇÃO</div>
+			<div class="player-crafting-head-icon"><i class="fas fa-dice-d6"></i></div>
+            <div class="crafting-items"></div>
+        </div>
+
+
+        <div class="cloth-inv">
+            <div class="cloth-image">
+                <div class="imagems">
+                    <img src="https://cdn.discordapp.com/attachments/1023003064828964864/1047926738082070668/roupas.png" style="margin-top: -37vh;margin-left: 31vh;">                </div>            
+            <div class="cloth-items">
+                <div class="cloth-inv-head"></div>
+                <div id="mask" class="item-box">
+                    <img src="assets/cloth/mask.png">
+
+                </div>
+                <div id="glasses" class="item-box">
+                    <img src="assets/cloth/glasses.png">
+
+                </div>
+                <div id="top" class="item-box">
+                    <img src="assets/cloth/shirt.png">
+
+                </div>
+                <div id="shirt" class="item-box">
+                    <img src="assets/cloth/jacket.png">
+
+                </div>
+                <div id="vest" class="item-box">
+                    <img src="assets/cloth/vest.png">
+
+                </div>
+                <div id="pants" class="item-box">
+                    <img src="assets/cloth/pants.png">
+
+                </div>
+                <div id="shoes" class="item-box">
+                    <img src="assets/cloth/shoes.png">
+
+                </div>
+                <div id="hat" class="item-box">
+                    <img src="assets/cloth/hat.png">
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="quick-hotbar">
+        <div class="player-quick-head">HOTBAR</div>
+    </div>
+    <script src='assets/js/app.js'></script>
+	<script src='assets/js/config.js'></script>
+	<script src='recipes.js'></script>
+    <script>
+        window.addEventListener('message', function() {
+
+            $( ".clothe-toggle" ).click(function() {
+                $(".cloth-items").css("display", "block")
+                $(".imagems").css("display", "block")
+                $(".crafting-inventory").css("display", "none")
+                $.post('https://'+GetParentResourceName()+'/createPed',JSON.stringify())
+            });
+        })
+    </script>
+</body>

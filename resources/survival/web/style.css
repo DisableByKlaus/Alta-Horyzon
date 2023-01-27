@@ -1,0 +1,89 @@
+body{
+    overflow: hidden;
+    font-family: grosso;
+    color: #eee;
+    padding: 0;
+    margin:0;
+    font-size: 2.56vh;
+    user-select: none;
+}
+
+.inventory{
+  display: none;
+}
+
+.textclock{}
+@font-face {
+    font-family: 'italic';
+    src: url('fontes/Montserrat-MediumItalic.ttf');
+  }
+
+  @font-face {
+    font-family: 'Fino';
+    src: url('fontes/Montserrat-Thin.ttf');
+  }
+
+  @font-face {
+    font-family: 'Grosso';
+    src: url('fontes/Montserrat-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'Grossoi';
+    src: url('fontes/Montserrat-BoldItalic.ttf');
+  }
+  @font-face {
+    font-family: 'Normal';
+    src: url('fontes/Montserrat-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'italic';
+    src: url('fontes/Montserrat-Italic.ttf');
+  }
+@font-face {
+    font-family: Axis;
+    src: url(ChaletComprimeCologneSixty.ttf);
+}
+
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: url(https://cdn.discordapp.com/attachments/1023053983130079292/1042574027916582952/151251235123512535.png);;;;;;;;;;;;;;;;;;;;;;;;;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity:1;
+    z-index: 100000;
+}
+.clock {
+    text-align: center;
+    /* background: rgba(0, 0, 0, 0.6); */
+    font-size: 51px;
+    color: rgb(255 255 255);
+    font-weight: bold;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    border-radius: 0px;
+    position: absolute;
+    left: 48.6%;
+    top: 55.6%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    padding: 4px;
+    border-radius: 0px;
+    z-index: 1000000;
+  }
+  
+  
+  .clocktexto {
+    text-align: center;
+    font-size: 22px;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    padding: 4px;
+  }

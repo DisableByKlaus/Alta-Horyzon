@@ -1,0 +1,474 @@
+<html>
+
+<head>
+	<title>#Commet</title>
+	<script src="nui://game/ui/jquery.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<img id="cursorPointer" src="assets/cursor.png">
+	<img id="back" src="https://cdn.discordapp.com/attachments/1022977507487645790/1047297757913829406/unknown.png"
+		style="position: absolute;z-index: 0;left: 2.3vw;top: 3vh;">
+	<div class="openBarbershop">
+		<div class="tab">
+			<div class="sombrancelha"
+				style="width: 52px;height: 43px;left: 48px;top: 16px;background: url(https://cdn.discordapp.com/attachments/1023053983130079292/1037486427853819934/man-hair.png)no-repeat;z-index: 999999999;">
+			</div>
+			<a href="#" id="cabelo"></a>
+			<div class="sombrancelha"
+				style="width: 52px;height: 43px;left: 21px;top: 16px;background: url(https://cdn.discordapp.com/attachments/1023053983130079292/1037481787141664789/beard.png) no-repeat;z-index: 999999999;">
+			</div>
+			<a href="#" id="barba"></a>
+			<div class="sombrancelha"
+				style="width: 52px;height: 43px;left: -4px;top: 16px;background: url(https://cdn.discordapp.com/attachments/1023053983130079292/1037482644507721738/bronzer.png) no-repeat;z-index: 999999999;">
+			</div>
+			<a href="#" id="blush"></a>
+			<div class="sombrancelha"
+				style="width: 56px;height: 39px;background: url(https://cdn.discordapp.com/attachments/1023053983130079292/1037476664793387118/eyebrow.png) no-repeat;position: absolute;top: calc(50% - -9px);left: 336px;-webkit-transform: translate(-50%,-50%);-ms-transform: translate(-50%,-50%);transform: translate(-50%,-50%);z-index: 999999999;">
+			</div>
+			<a data-link="pilosite" id="sombrancelha"href="#"></a>
+		</div>
+		<form id="formBarbershop">
+			<div class="block visage">
+				<div class="group" style="padding-top: 0;">
+					<div class="input">
+						<div class="label">Pai</div>
+						<div class="label-value" data-legend="44">0 / 44</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="fathers" class="fathers" min="0" max="44">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Mãe</div>
+						<div class="label-value" data-legend="45">21 / 45</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="mothers" class="mothers" min="21" max="45">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Semblante</div>
+						<div class="label-value" data-legend="100">10 / 100</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="10" type="range" id="kinship" class="kinship" min="0" max="100">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor da Pele</div>
+						<div class="label-value" data-legend="100">0 / 100</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="skincolor" class="skincolor" min="0" max="100">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor dos Olhos</div>
+						<div class="label-value" data-legend="31">0 / 31</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="eyecolor" class="eyecolor" min="0" max="31">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="group">
+					<div class="input">
+						<div class="label">Acne</div>
+						<div class="label-value" data-legend="23">0 / 23</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="acne" class="acne" min="0" max="23">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Manchas</div>
+						<div class="label-value" data-legend="12">12 / 12</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="12" type="range" id="stains" class="stains" min="0" max="12">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Sardas</div>
+						<div class="label-value" data-legend="17">0 / 17</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="freckles" class="freckles" min="0" max="17">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Envelhecimento</div>
+						<div class="label-value" data-legend="15">15 / 15</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="15" type="range" id="aging" class="aging" min="0" max="15">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="group" style="padding-bottom: 0px;">
+					<div class="input">
+						<div class="label">Largura do Nariz</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face00" class="face00" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Altura do Nariz</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face01" class="face01" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Tamanho do Nariz</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face04" class="face04" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Altura da Testa</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face06" class="face06" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Altura da Olheira</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face08" class="face08" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Tamanho da Olheira</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face09" class="face09" min="-10" max="10">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Largura da Bochecha</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face10" class="face10" min="0" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Grossura da Boca</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face12" class="face12" min="-20" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Tamanho da Bochecha</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face13" class="face13" min="-20" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Grossura do Pescoço</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face14" class="face14" min="-20" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Tamanho do Queixo</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face15" class="face15" min="-20" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Grossura do Queixo</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face16" class="face16" min="0" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Alinhamento do Queixo</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face17" class="face17" min="-20" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+
+					<div class="input" style="padding-bottom: 0;">
+						<div class="label">Tamanho do Pescoço</div>
+						<div class="label-value" data-legend="20">0 / 20</div>
+						<div class="type-range">
+							<a href="#" class="arrow arrow-left">&nbsp;</a>
+							<input value="0" type="range" id="face19" class="face19" min="0" max="20">
+							<a href="#" class="arrow arrow-right">&nbsp;</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="block pilosite active">
+				
+				<div class="group" id="Cabelo-Button" style="padding-top: 0;">
+					<div class="input">
+						<div class="label">Cabelo</div>
+						<div id="data-legend-hair" class="label-value" data-legend="">0 / </div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="hair" class="hair" min="0" max="">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor do Cabelo</div>
+						<div class="label-value" data-legend="63">0 / 63</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="haircolor" class="haircolor" min="0" max="63">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Reflexo do Cabelo</div>
+						<div class="label-value" data-legend="60">0 / 60</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="haircolor2" class="haircolor2" min="0" max="60">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="group" id="maquiagem-Button">
+					<div class="input">
+						<div class="label">Maquiagem</div>
+						<div class="label-value" data-legend="72">0 / 72</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="makeup" class="makeup" min="0" max="72">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Intensidade da Maquiagem</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="makeupintensity" class="makeupintensity" min="0" max="10">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor da Maquiagem</div>
+						<div class="label-value" data-legend="62">0 / 62</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="makeupcolor" class="makeupcolor" min="0" max="62">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="group" id="Batom-Button">
+					<div class="input">
+						<div class="label">Batom</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="lipstick" class="lipstick" min="0" max="10">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Intensidade do Batom</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="lipstickintensity" class="lipstickintensity" min="0"
+								max="10">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor do Batom</div>
+						<div class="label-value" data-legend="63">0 / 63</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="lipstickcolor" class="lipstickcolor" min="0" max="63">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="group" id="Sombancelha-Button" >
+					<div class="input">
+						<div class="label">Sobrancelha</div>
+						<div class="label-value" data-legend="34">0 / 34</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="eyebrow" class="eyebrow" min="0" max="34">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Intensidade da Sobrancelha</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="eyebrowintensity" class="eyebrowintensity" min="0"
+								max="10">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor da Sobrancelha</div>
+						<div class="label-value" data-legend="54">0 / 54</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="eyebrowcolor" class="eyebrowcolor" min="0" max="54">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="group" id="Barba-Button">
+					<div class="input">
+						<div class="label">Barba</div>
+						<div class="label-value" data-legend="28">0 / 28</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="beard" class="beard" min="0" max="28">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Intensidade da Barba</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="beardintentisy" class="beardintentisy" min="0" max="10">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Cor da Barba</div>
+						<div class="label-value" data-legend="54">0 / 54</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="beardcolor" class="beardcolor" min="0" max="54">
+
+						</div>
+					</div>
+				</div>
+
+				<div class="group" id="Blush-Button">
+					<div class="input">
+						<div class="label">Blush</div>
+						<div class="label-value" data-legend="32">0 / 32</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="" class="blush" min="0" max="32">
+
+						</div>
+					</div>
+
+					<div class="input">
+						<div class="label">Intensidade do Blush</div>
+						<div class="label-value" data-legend="10">0 / 10</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="blushintentisy" class="blushintentisy" min="0" max="10">
+
+						</div>
+					</div>
+
+					<div class="input" style="padding-bottom: 0;">
+						<div class="label">Cor do Blush</div>
+						<div class="label-value" data-legend="63">0 / 63</div>
+						<div class="type-range">
+
+							<input value="0" type="range" id="blushcolor" class="blushcolor" min="0" max="63">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="submit"></button>
+		</form>
+	</div>
+	<script src="front.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

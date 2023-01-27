@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>BANK</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/styles.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+<body style="zoom: 1;">
+
+    <div class="classedchavepix"></div>
+    <div class="notify"></div>
+    <bank_section style="display: none;">
+        <section>
+            <div id="maskbank" class="right-section bank-main">
+                <div class="clasediv">
+                    <modal style="display: none;" id="modalDeposito" class="modalOpen">
+                        <div class="title">Depositar</div>
+                        <div class="modal-input">
+                            <label>Quantidade R$</label>
+                            <input type="number" id="valueDeposit" placeholder="EX: 500,000">
+                        </div>
+                        <button id="confirm" onclick="DepositMoney()"><svg class="svg-inline--fa fa-check fa-w-16 icon"
+                                aria-hidden="true" focusable="false" data-prefix="far" data-icon="check" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M435.848 83.466L172.804 346.51l-96.652-96.652c-4.686-4.686-12.284-4.686-16.971 0l-28.284 28.284c-4.686 4.686-4.686 12.284 0 16.971l133.421 133.421c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-28.284-28.284c-4.686-4.686-12.284-4.686-16.97 0z">
+                                </path>
+                            </svg>
+                            Confirmar
+                        </button>
+                        <button id="cancelar" onclick="closeModal()"><svg class="svg-inline--fa fa-times fa-w-11 icon"
+                                aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+                                <path fill="currentColor"
+                                    d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                                </path>
+                            </svg>
+                            Cancelar
+                        </button>
+                        <div class="modal-warning">
+                            Preencha os campos corretamente antes de confirmar a ação!
+                        </div>
+                    </modal>
+                </div>
+                <modal style="display: none;"></modal>
+                <div class="card-section">
+                    <div class="left-section">
+                        <div class="item flex" style="background: #54160f;">
+                            <img src="assets/dash.png">
+                        </div>
+                        <div class="item flex" onclick="depositar()">
+                            <img src="assets/deposito.png">
+                        </div>
+                        <div class="item flex" onclick="sacar()">
+                            <img src="assets/sacar.png">
+                        </div>
+                        <div class="item flex" onclick="open_transferencias()">
+                            <img src="assets/resacar.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap" style="filter: blur(0px);">
+                    <div class="front-card">
+                        <div class="transfer-list">
+                            <div class="bemvindo">Bem vindo(a)</div>
+                            <div class="bemvindo2">Ao Comeet Bank, o banco que esta sempre ao topo!</div>
+                            <br>
+                            <hr
+                                style="width: 99%;text-align:left;margin-left:0;margin-top: -24px;background-color: gray;border-color: #54160f;">
+                            <br>
+                            <span>Transferencias Recentes:</span>
+                            <div class="clear-extract" style="display: block;" onclick="clear_trans()">
+                                apagar
+                            </div>
+
+                            <div class="transferencias-active" style="/* display: flex; */font-size: 16px;/* margin-top: 27px; */">
+                                <div class="extract-item" style="/* display: flex; */font-size: 16px;margin-top: 30px;">
+                                    <div class="extract-icon flex">
+                                        <div class="text-icon" style="">
+                                            <a style="font-weight: 300 !important;color: #8326c7;"></a>
+                                            <span style="margin-left: 381px;"></span><small></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-right">
+                    <div class="section-right">
+                        <div class="foto">
+                        </div>
+                        <div class="nomes"></div>
+                        <div class="bancadas"></div>
+                        <div class="carteiradas"></div>
+                        <div class="gemas"></div>
+                    </div>
+                    <div class="icons-carteira">
+                        <div class="icons-banco">
+                            <div class="bancoicon" style="background: url(assets/banco.png);"></div>
+                        </div>
+                        <div class="carteiraicon" style="background: url(assets/cateira.png);"></div>
+                        <div class="coinsicon" style="background: url(assets/coins.png);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </bank_section>
+    <bankclose style="display: none;">
+        <div class="icon">
+            <div class="circle">
+                <span class="dot"></span>
+            </div>
+            <span class="mark"></span>
+        </div>
+        <h1>Banco Fechado</h1><br>
+        <small style="display: flex;justify-content: center;">Desculpa pelo ocorrido!</small><br>
+        <small>Horario de funcionamento 07:00 até 21:00</small>
+    </bankclose>
+    <notify style="display: none;"></notify>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.0/morris.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="js/font.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>

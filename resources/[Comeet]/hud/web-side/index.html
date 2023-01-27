@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alta Hud</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js' type='text/javascript'></script>
+  <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+  <div class="base">
+    <div class="subbase">
+      <div class="progresss">
+        <div class="quadrado-progress progress"> <svg>
+            <path class="BackProgressBarProgress" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+            <path class="ProgressBarProgress" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+          </svg>
+          <img src="img/sync.png" alt="">
+
+        </div>
+      </div>
+
+      <div class="hunger">
+        <div class="quadrado-progress fome"> <svg>
+            <path class="BackProgressBarFome" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+            <path class="ProgressBarFome" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+          </svg>
+          <img src="img/restaurant.png" alt="">
+
+        </div>
+      </div>
+      <div class="thirst">
+        <div class="quadrado-progress sede"> <svg>
+            <path class="BackProgressBarSede" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+            <path class="ProgressBarSede" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+          </svg>
+          <img src="img/water-glass.png" alt="" style="
+    width: 17px;
+    height: 22px;
+    bottom: 9px;
+    right: 13px;
+">
+
+        </div>
+      </div>
+
+      <div class="colete">
+        <div class="quadrado-progress armor"> <svg>
+            <path class="BackProgressBarArmor" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+            <path class="ProgressBarArmor" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+          </svg>
+          <img src="img/shield.png" alt="" style="
+    width: 18px;
+    height: 23px;
+    bottom: 9px;
+    right: 12px;
+">
+
+        </div>
+      </div>
+
+      <div class="life">
+        <div class="quadrado-progress vida"> <svg>
+            <path class="BackProgressBarVida" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+            <path class="ProgressBarVida" d="m39.85352,2.67461l-24.70703,0c-7,0 -12.67188,5.67188 -12.67188,12.67188l0,24.70703c0,7 5.67188,12.67187 12.67188,12.67187l24.70703,0c7,0 12.67187,-5.67578 12.67187,-12.67187l0,-24.70703c0,-7 -5.67187,-12.67188 -12.67187,-12.67188zm0,0">
+            </path>
+          </svg>
+          <img src="img/vida.png" alt="" style="
+    bottom: 9px;
+    right: 9px;
+">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="hudcar">
+<div id="rectangle">
+  <p class="bottom-right"></p>
+    <div id="progress-bar">
+  <div id="progress-indicator"></div>
+</div>
+</div>
+<div id="secondrectangle">
+  <div role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" class="fuel"></div>
+</div>
+<img src="https://cdn.discordapp.com/attachments/1022977507487645790/1055464596133134386/seat-belt.png" id="bottom-right-image">
+</div>
+<script type="text/javascript" src="index.js"></script>
+
+</body>

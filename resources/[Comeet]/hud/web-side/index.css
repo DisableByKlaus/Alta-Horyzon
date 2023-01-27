@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'italic';
+  src: url('fontes/Montserrat-MediumItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Fino';
+  src: url('fontes/Montserrat-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Grosso';
+  src: url('fontes/Montserrat-Bold.ttf');
+}
+@font-face {
+  font-family: 'Grossoi';
+  src: url('fontes/Montserrat-BoldItalic.ttf');
+}
+@font-face {
+  font-family: 'Normal';
+  src: url('fontes/Montserrat-Regular.ttf');
+}
+@font-face {
+  font-family: 'italic';
+  src: url('fontes/Montserrat-Italic.ttf');
+}
+
+body {
+  color: white;
+  font-weight: 500;
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+main {
+  width: 50vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+.base {
+  width: 100vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+}
+
+.subbase {
+  width: 50vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2rem;
+  margin-left: 0rem;
+}
+
+.PlayerHud {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #E8CBC0, #636FA4);
+  clip-path: circle(40% at right 80%);
+  z-index: -1;
+}
+
+.life {
+  width: 55px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+}
+
+.colete {
+  width: 55px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+}
+
+.hunger {
+  width: 55px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+}
+
+.thirst {
+  width: 55px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+}
+
+.progresss {
+  width: 55px;
+  display: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0rem;
+  display: none;
+}
+svg {
+  width: 54px;
+  height: 54px;
+}
+.quadrado-progress{
+  position: relative;
+  width: 4.5vh;
+  height: 4.5vh;
+  margin: auto;
+  border-radius: 10%;
+  color: white;
+  font-size: 3vh;
+}
+.quadrado-progress img {
+  position: absolute;
+  bottom: 9px;
+  right: 10px;
+  width: 24px;
+  height: 23px;
+}
+.quadrado-progress progress {
+  position: absolute;
+  width: 5vh;
+  height: 4vh;
+  left: 0;
+  top: 4px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
+}
+/*-----------------------*/
+.ProgressBarVida {
+  --color: #ff3d3d;
+  --percent: 98;
+  fill: none;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+.BackProgressBarVida {
+  --color: #FF6666;
+  --percent: 100;
+  fill: #141414;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+/*-----------------------*/
+.ProgressBarArmor {
+  --color: #9d9d9d;
+  --percent: 98;
+  fill: none;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+.BackProgressBarArmor {
+  --color: #686868;
+  --percent: 100;
+  fill: #141414;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+/*-----------------------*/
+.ProgressBarFome {
+  --color: #ff9600;
+  --percent: 98;
+  fill: none;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+.BackProgressBarFome {
+  --color: #855700;
+  --percent: 100;
+  fill: #141414;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+/*-----------------------*/
+.ProgressBarSede {
+  --color: #36c9ff;
+  --percent: 98;
+  fill: none;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+.BackProgressBarSede {
+  --color: #36c9ff9a;
+  --percent: 100;
+  fill: #141414;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+/*-----------------------*/
+.ProgressBarProgress {
+  --color: #9d9d9d;
+  --percent: 98;
+  fill: none;
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+.BackProgressBarProgress {
+  --color: #FF6666;
+  --percent: 100;
+  fill: #141414;
+  /* background: url(https://cdn.discordapp.com/attachments/934272608621445202/1044114057273298964/Group_4_copy_2.png); */
+  stroke-width: 3px;
+  stroke: var(--color);
+  /* filter: drop-shadow(0 0 5px var(--color)); */
+  stroke-dasharray: 393;
+  stroke-dashoffset: calc(438px - (244px * var(--percent)) / 100);
+  animation: anim .5s ease-in-out;
+}
+
+
+p.bottom-right {
+  position: absolute;
+  bottom: 1px;
+  right: 21px;
+  color: #ffffff;
+  font-size: 73px;
+  text-align: left;
+  font-family: grosso;
+  text-align: end;
+}
+
+@keyframes progress {
+0% { --percentage: 0; }
+100% { --percentage: var(--value); }
+}
+
+@property --percentage {
+syntax: '<number>';
+inherits: true;
+initial-value: 0;
+}
+
+[role="progressbar"] {
+--percentage:
+var(--value);
+--primary: #ffc63d;
+--secondary: #ffc63d70;
+--size: 83px;
+animation: progress 2s 0.5s forwards;
+width: var(--size);
+aspect-ratio: 2 / 1;
+border-radius: 50% / 100% 100% 0 0;
+position: relative;
+overflow: hidden;
+display: flex;
+align-items: flex-end;
+justify-content: center;
+transform: rotate(270deg);
+right: 31%;
+bottom: -28%;
+}
+
+[role="progressbar"]::before {
+content: "";
+position: absolute;
+top: 0px;
+left: 0;
+width: 100%;
+height: 100%;
+background: conic-gradient(from 0.75turn at 50% 100%, var(--primary) calc(var(--percentage) * 1% / 2), var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%));
+mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+mask-mode: alpha;
+-webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+-webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+counter-reset: percentage var(--value);
+content: counter(percentage);
+font-family: Helvetica, Arial, sans-serif;
+font-size: calc(var(--size) / 5);
+color: var(--primary);
+transform: rotate(90deg);
+color: #ffc107;
+font-family: normal;
+}
+#rectangle {
+  position: absolute;
+  bottom: 82px;
+  right: 31px;
+  width: 200px;
+  height: 100px;
+  background-color: #141414;
+  border-radius: 10px;
+  border: solid 3px #ff3d3d;
+}
+@media (max-width: 600px) {
+#elemento {
+  width: 100%;
+  height: auto;
+}}
+#secondrectangle {
+  position: absolute;
+  bottom: 82px;
+  right: 233px;
+  width: 62px;
+  height: 100px;
+  background-color: #141414;
+  border-radius: 10px;
+  border: solid 3px #ff3d3d;
+}
+#progress-bar {
+  position: fixed;
+  bottom: 99px;
+  right: 41px;
+  width: 0.2%;
+  height: 62px;
+  background-color: #ffffff;
+  transform: rotate(0.5turn);
+}
+
+#progress-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 9%;
+  height: 92%;
+  background-color: #00ff0a;
+  /* transition: width 0.5s ease-in-out; */
+  width: 111.2%;
+  height: 62px;
+  transform: rotate(0.5turn);
+  z-index: 99999999;
+  max-height: 62px;
+}
+#bottom-right-image {
+  position: fixed;
+  bottom: 114px;
+  right: 52px;
+  width: 25px;
+  height: 25px;
+  opacity: 0.4;
+}
+#hudcar{
+  display: none; 
+}
+
+.fuel{
+  --value: 95;
+  animation: progress 2s 0.5s forwards;
+}

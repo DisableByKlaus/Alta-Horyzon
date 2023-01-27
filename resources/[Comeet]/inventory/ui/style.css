@@ -1,0 +1,686 @@
+body{
+    overflow: hidden;
+    font-family: Heavy;
+    color: #eee;
+    padding: 0;
+    margin:0;
+    font-size: 2.56vh;
+    user-select: none;
+}
+@font-face {
+    font-family: Heavy;
+    src: url(assets/font/openminimal.ttf);
+}
+.inventory{
+    display: none;
+}
+.bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: url(assets/images/geral/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity:0.7;
+}
+.player-inventory{
+    position: absolute;
+    top: 42vh;
+    left: 41vw;
+    height: 44vh;
+    width: 31vw;
+    overflow-y: scroll;
+    padding-left: 0.1vh;
+}
+.other-inventory{
+    display: none;
+    position: absolute;
+    top:36vh;
+    right:58vw;
+    height: 44vh;
+    width: 31vw;
+    overflow-y: scroll;
+    padding-left: 0.1vh;
+}
+.player-quick{
+    width: 4.3vw;
+    position: fixed;
+	top: 52%;
+	left: 97%;
+	transform: translate(-50%, -50%);
+}
+.player-quick-head{
+    position: fixed;
+	top: -2%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.player-pocket{
+    position: absolute;
+    top: 20vh;
+    left: 41vw;
+    /* width: 31vw; */
+    width: auto;
+}
+
+/*.inventory-weight-head{
+    position: relative;
+    top:33.5vh;
+    left:23vh;
+	font-size: 1.7vh;
+}
+
+.inventory-weight-head-other{
+    position: relative;
+    top:31.65vh;
+    left:116.3vh;
+	font-size: 1.7vh;
+}
+
+
+.player-quick-head{
+    position: fixed;
+	top: 26.5%;
+	left: 0%;
+	width: 50px;
+	font-size: 3.5vh;
+	transform: translate(-50%, -50%);
+	word-wrap: break-word;
+    letter-spacing: 20px; 
+}
+*/
+.cloth-items{
+    position: absolute;
+    top: 16vh;
+    right: 80vw;
+    display: none;
+}
+
+.cloth-acessories{
+    position: absolute;
+    top:17.2vh;
+    right:20vw;
+}
+.cloth-inv-head{
+    position: absolute;
+    top:-2.5vh;
+    right:1.2vw;
+}
+.cloth-inv-head-right{
+    position: absolute;
+    top:-2.5vh;
+    left:23.9vw;
+}
+
+.player-inventory-head-icon{
+    position: fixed;
+	top: 34.3%;
+	left: 9%;
+	opacity: .3;
+	transform: translate(-50%, -50%);
+}
+
+.player-pocket-head-icon{
+    position: fixed;
+	top: 21.3%;
+	left: 9%;
+	opacity: .3;
+	transform: translate(-50%, -50%);
+}
+
+.player-crafting-head-icon{
+    position: fixed;
+	top: 21.4%;
+	right: 37.8%;
+	opacity: .3;
+	transform: translate(-50%, -50%);
+}
+
+.player-others-head-icon{
+    position: fixed;
+	top: 34.3%;
+	right: 36.8%;
+	opacity: .3;
+	transform: translate(-50%, -50%);
+}
+
+.player-quick-head-indicator{
+    position: fixed;
+	font-size: 5vh;
+	opacity: .3;
+	left: 51%;
+	transform: translate(-50%, -50%);
+}
+
+.item-box {
+    display: inline-flex;
+    width: 8vh;
+    height: 8vh;
+    /* border-left: 0.10000000000000142vh solid rgba(169, 169, 169,0.6); */
+    /* border-bottom: 0.1vh solid rgba(169, 169, 169,0.6); */
+    /* border-top: 0.10000000000000142vh solid rgba(169, 169, 169,0.6); */
+    transform: rotate(-90deg);
+    margin-top:1vh;
+    margin-right: 0.5vw;
+    justify-content: center;
+    place-items: center;
+}
+.item-box:before{
+    content: "";
+    height: 20%;
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    background: url(https://cdn.discordapp.com/attachments/1022977507487645790/1047917983986630708/unknown.png);
+    background-repeat: no-repeat;
+}
+.item-box:after {
+    content: "";
+    /* height: 27%; */
+    position: absolute;
+    /* right: 76px; */
+    /* top:0; */
+    /* border-right: 0.1vh solid rgba(169, 169, 169,0.6); */
+    /* border-bottom: 3.1vh solid rgba(169, 169, 169,0.6); */
+}
+.item-box *{
+  transform: rotate(90deg);
+}
+.item-box:before {
+    bottom: 0px;
+    height: 80px;
+    width: 80px;
+}
+.item-box img{
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    /*filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 black);*/
+}
+.item-amount{
+    position: absolute;
+    left:-0.2vh;
+    font-size: 1.5vh;
+	top: 1.5vh;
+    width: 3.3vh;
+    height: 1.5vh;
+    overflow:hidden;
+}
+.cloth-items *{
+    display: flex;
+    opacity: 0.7;
+}
+.cloth-items .item-box:hover{
+    opacity: 0.2;
+}
+.cloth-items img{
+    width: 60px;
+    height: 60px;
+    right: 1vh;
+}
+.cloth-items .item-box:nth-child(1){
+    position: absolute;
+    right:-10vh;
+    bottom:0vh;
+}
+.cloth-items .item-box:nth-child(2){
+    position: absolute;
+    right: -6vh;
+    bottom: -22vh;
+}
+.cloth-items .item-box:nth-child(3){
+    position: absolute;
+    right: -29vh;
+    bottom: -22vh;
+}
+.cloth-items .item-box:nth-child(4){
+    position: absolute;
+    right: -6vh;
+    bottom: -34vh;
+}
+.cloth-items .item-box:nth-child(5){
+    position: absolute;
+    right: -33vh;
+    bottom: -35vh;
+}
+.cloth-items .item-box:nth-child(6){
+    position: absolute;
+    bottom: -43vh;
+    right: -6vh;
+}
+.cloth-items .item-box:nth-child(7){
+    position: absolute;
+    right: -30vh;
+    bottom: -52vh;
+}
+.cloth-items .item-box:nth-child(8){
+    position: absolute;
+    bottom: -53vh;
+    right: -8vh;
+}
+.cloth-items .item-box:nth-child(9){
+    position: absolute;
+    right: -25.1vh;
+    bottom: -3vh;
+    top: 3vh;
+    left: 9vh;
+}
+.cloth-items > .item-box > span{
+    position: relative;
+    right:1.9vh;
+    font-size: 2vh;
+}
+
+.character{
+    position: absolute;
+    width: 24vw;
+    height: 90vh;
+    right: 23.5vh;
+    top: 15.5vh;
+    opacity: 0.7;
+    z-index: -1;
+}
+#amount {
+    position: fixed;
+    top: 25%;
+    left: 68.1%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    z-index: 1;
+    border: 0.1vh solid rgba(86, 86, 86, 0.6);
+    outline: none;
+    color: white;
+    width: 8vh;
+    height: 2.3vh;
+    text-align: center;
+    font-size: 0.8vh;
+}
+#search {
+    position: fixed;
+    top: 77%;
+    left: 47.5%;
+    transform: translate(-50%, -50%);
+	
+    background: transparent;
+    z-index: 1;
+    border: 0.1vh solid rgba(86, 86, 86,0.6);
+    outline: none;
+    color: white;
+    width: 8vh;
+    height: 2.3vh;
+    text-align: center;
+	font-size: 0.8vh;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.logs {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    text-align: right;
+    color:white;
+    font-size: 1.5vh;
+    height: 8vh;
+    overflow-y: scroll;
+}
+.logs p{
+    line-height: 0.1vh;
+}
+.use-item{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 8vh;
+    border:1px solid red;
+    display: inline-flex;
+    justify-content: center;
+    place-items: center;
+    border: none;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(1vh);
+    font-size:2vh;
+}
+.use-item-text i {
+    transform: rotate(0deg);
+    margin-right: 0.3vw;
+    top: -0.4vh;
+    position: relative;
+}
+
+.item-crafting{
+    display: inline-block;
+    border:0.1vh solid rgba(255, 255, 255,0.1);
+    width: 12vw;
+    height: 15vh;
+    text-align: right;
+    margin-top: 0vh;
+    border-radius: 0.1vh;
+}
+.item-crafting .left{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    right:0%;
+}
+.item-crafting .item-box{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    top:4vh;
+}
+.item-crafting .right{
+    position: relative;
+    width: 70%;
+    height: 100%;
+    top:-100%;
+    left:47%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+    text-align: left;
+}
+.item-crafting .right span{
+    display: inline-block;
+    font-size:1.7vh;
+}
+.recipe img{
+    display: inline;
+    position: relative;
+    width:3vh;
+    height:3vh;
+    transform:translate(-2%, 41%);
+}
+.craft-button-text{
+    position: absolute;
+    top: 50%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+	font-size: 0.70em;
+    width: 6vh;
+    height: 3vh;
+    top:12.5vh;
+	opacity: 0.6;
+	transition: opacity 0.3s ease-out, font-size 0.3s ease-out, top 0.5s ease-out;
+}
+.craft-button{
+    position: absolute;
+    top: 50%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(13, 13, 13,0.6);
+    width: 6vh;
+    height: 3vh;
+    top:12vh;
+    border-radius: 0.2vh;
+}
+
+.craft-button-text:hover{
+    font-size: 0.78em;
+	opacity: 1.2;
+	top: 12.50vh;
+}
+
+.crafting-inventory{
+    position: absolute;
+    top: 24vh;
+    right: 61vw;
+    height: 46vh;
+    width: 31vw;
+    overflow-y: scroll;
+    padding-left: 0.1vh;
+}
+.crafting-items {
+	display: grid;
+	grid-template-columns: 0.5fr 1fr; /* Aqui ele ta fazendo tipo pegar 50% cada um dos container */
+	column-gap: 1em;
+	grid-row-gap: 1em;
+}
+
+.crafting-toggle{
+    position: absolute;
+    bottom: 36.4vh;
+    left: 1.5vh;
+    border-radius: 0.3vh;
+    padding: 1vh 2vh 1vh 2vh;
+    font-size: 2.1vh;
+}
+.crafting-toggle i{
+    margin-right: 1vh;
+}
+.crafting-toggle:hover{
+    opacity: 0.5;
+}
+
+.clothe-toggle {
+    position: absolute;
+    bottom: 48.4vh;
+    left: 1.5vh;
+    border-radius: 0.3vh;
+    padding: 1vh 2vh 1vh 2vh;
+    font-size: 2.1vh;
+}
+
+.clothe-toggle:hover{
+    opacity: 0.5;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+::-webkit-scrollbar {
+    width: 0.5vw;
+}
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+::-webkit-scrollbar-track {  
+    background: transparent;
+}
+.quick-hotbar{
+    display: none;
+    position: absolute;
+    width: 4.3vw;
+    top:50%;
+    right: -10vw;
+    transform: translateY(-50%);
+}
+.item-hotbar-key{
+    display: flex;
+    position: relative;
+    top: -6vh;
+    right: 3vh;
+    border: 0.1vh solid rgba(169, 169, 169,0.6);
+    width: 2vh;
+    height: 2vh;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    font-size:2.5vh
+}
+.ui-tooltip{
+    border: none;
+    box-shadow: none;
+    color:white;
+    opacity: 1;
+    background: rgba(82, 82, 82, 0.85);
+    border-radius: 1vh;
+    padding: 1vh 1.5vh 1vh 1.5vh;
+    font-family: Heavy;
+    font-size:2vh;
+}
+.settings{
+    position: absolute;
+    display: block;
+    right: 1vh;
+    bottom: 2.0vh;
+    /*background: rgba(13, 13, 13,0.6);*/
+    border-radius: 0.3vh;
+    padding: 1vh 2vh 1vh 2vh;
+	transition: opacity 0.3s;
+}
+
+.settings:hover{
+    opacity: 0.5;
+}
+
+.settings-tab{
+    display: none;
+    position: absolute;
+    width: 30vh;
+    height: 10vh;
+    left: -2vh;
+    top: -10vh;
+    transform: translate(-50%,-50%);
+    background: rgba(13, 13, 13,0.6);
+    border-radius: 0.3vh;
+    padding: 1vh 1vh 1vh 1vh;
+    font-size:2vh;
+	opacity: 1.0;
+}
+.settings-tab span{
+    display: block;
+    margin-top:0.5vh;
+}
+.drop-item{
+    position: absolute;
+    bottom: 27vh;
+    left: 132vh;
+    transform: translate(-50%, -50%);
+    border-radius: 0.3vh;
+    padding: 1.5vh 2vh;
+    text-align: center;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-out 0s;
+}
+
+.drop-item:hover{
+	opacity: 0.5;
+}
+
+.send-item{
+    position: absolute;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    bottom: 12vh;
+    background: rgba(13, 13, 13,0.6);
+    border-radius: 0.3vh;
+    padding: 1.5vh 1.8vh 1.5vh 1.8vh;
+    text-align: center;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+	transition: opacity 0.3s ease-out;
+}
+
+.send-item:hover{
+	opacity: 0.5;
+}
+
+.shop{
+    display: none;
+    position: absolute;
+    left:0vh;
+    width: 35vh;
+    height: 100%;
+    background: url(https://cdn.discordapp.com/attachments/618790229276491796/887338148907065384/bgttt2234.png);
+    color:white;
+    overflow-y:scroll;
+}
+.shop-item{
+    position: relative;
+    width: 95%;
+    background-color: rgba(97, 97, 97, 0.2);
+    height: 15vh;
+    margin-top:1vh;
+    border-radius: 1vh;
+    left: 50%;
+    right: 50%;
+    translate: -50%;
+}
+.shop-item-header{
+    text-align: center;
+    font-size:3vh;
+}
+
+.shop-item-price{
+    position: absolute;
+    top:5vh;
+    right:2vh;
+    font-size:2vh;
+}
+.shop-item-price i{
+    margin-right:0.5vh;
+}
+
+.shop-item-img{
+    position: relative;
+    width: 10vh;
+    height: 10vh;
+    top:2vh;
+    left:2vh;
+}
+
+.shop-item-add-to-cart-btn{
+    position: relative;
+    background-color: #014d64;
+	border-radius: .5vw;
+    font-size:2vh;
+    width: 10vh;
+    height: 3vh;
+    text-align: center;
+    color:white;
+    left:20vh;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    bottom:2.5vh;
+    outline: none;
+    border: none;
+    color: white;
+    font-family: 'Heavy';
+}
+.shop-item-add-to-cart-btn i{
+    margin-left:0.8vh;
+    font-size:1.5vh
+}
+.shop-checkout{
+    position: fixed;
+    background-color: #014d64;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    padding-top: .5vh;
+    padding-bottom: .5vh;
+    border-radius: .5vw;
+    box-shadow: 0 0 2vh #014d64;
+    width: max-content;
+    height: max-content;
+    top: 96vh;
+    right: 1vh;
+    font-size: 2vh;
+    transition: all 0.3s ease-out;
+    z-index: 10;
+}
+.shop-checkout:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+::-webkit-input-placeholder {
+    color: white;
+}
+
+.backpack{
+    display:none;
+}
+
+.imagems{
+    display: none;
+}
